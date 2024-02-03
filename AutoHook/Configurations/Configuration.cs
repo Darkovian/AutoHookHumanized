@@ -45,6 +45,9 @@ public class Configuration : IPluginConfiguration
     public int DelayBetweenHookMin = 0;
     public int DelayBetweenHookMax = 0;
 
+    public int MinRandomAutocastHumanization = 0;
+    public int MaxRandomAutocastHumanization = 0;
+
     public bool ShowStatusHeader = true;
     
     // old config

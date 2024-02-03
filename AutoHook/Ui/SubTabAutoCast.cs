@@ -36,7 +36,6 @@ public class SubTabAutoCast
         };
         
         DrawHeader(acCfg);
-        DrawHumanization(acCfg);
         DrawBody(acCfg);
     }
 
@@ -89,58 +88,6 @@ public class SubTabAutoCast
         ImGui.Spacing();
 
         ImGui.Separator();
-    }
-
-    private static void DrawHumanization(AutoCastsConfig acCfg)
-    {
-        ImGui.PushID("MinRandomHumanization");
-        ImGui.TextWrapped(UIStrings.MinAutocastHumanization);
-        ImGui.SetNextItemWidth(45 * ImGuiHelpers.GlobalScale);
-        if (ImGui.InputInt(UIStrings.DrawConfigs_Min_, ref acCfg.MinRandomHumanization, 0))
-        {
-            if (acCfg.MinRandomHumanization < 0)
-                acCfg.MinRandomHumanization = 0;
-            else if (acCfg.MinRandomHumanization > 9999)
-                acCfg.MinRandomHumanization = 9999;
-
-            if (acCfg.MinRandomHumanization > acCfg.MaxRandomHumanization)
-            {
-                (acCfg.MaxRandomHumanization, acCfg.MinRandomHumanization) = (acCfg.MinRandomHumanization, acCfg.MaxRandomHumanization);
-            }
-
-
-            Service.Save();
-        }
-
-        ImGui.Spacing();
-        ImGui.NewLine();
-        ImGui.Spacing();
-
-        ImGui.PopID();
-
-        ImGui.PushID("MaxRandomHumanization");
-        ImGui.TextWrapped(UIStrings.MaxAutocastHumanization);
-        ImGui.SetNextItemWidth(45 * ImGuiHelpers.GlobalScale);
-        if (ImGui.InputInt(UIStrings.DrawConfigs_Max_, ref acCfg.MaxRandomHumanization, 0))
-        {
-            if (acCfg.MaxRandomHumanization < 0)
-                acCfg.MaxRandomHumanization = 0;
-            else if (acCfg.MaxRandomHumanization > 9999)
-                acCfg.MaxRandomHumanization = 9999;
-
-            if (acCfg.MaxRandomHumanization < acCfg.MinRandomHumanization)
-            {
-                (acCfg.MinRandomHumanization, acCfg.MaxRandomHumanization) = (acCfg.MaxRandomHumanization, acCfg.MinRandomHumanization);
-            }
-
-            Service.Save();
-        }
-
-        ImGui.Spacing();
-        ImGui.Separator();
-        ImGui.Spacing();
-
-        ImGui.PopID();
     }
 
     private void DrawBody(AutoCastsConfig acCfg)

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using AutoHook.Configurations;
 using AutoHook.Resources.Localization;
 using AutoHook.Utils;
 using Dalamud.Interface.Utility;
@@ -95,6 +96,8 @@ public class TabConfigGuides : BaseTab
         DrawDelayHook();
 
         DrawDelayCasts();
+
+        DrawHumanization();
         
         if (DrawUtil.Checkbox(UIStrings.Show_Current_Status_Header, ref Service.Configuration.ShowStatusHeader))
         {
@@ -188,6 +191,55 @@ public class TabConfigGuides : BaseTab
         ImGui.Separator();
         ImGui.Spacing();
         
+        ImGui.PopID();
+    }
+
+    private static void DrawHumanization()
+    {
+        ImGui.PushID("MinRandomAutocastHumanization");
+        ImGui.TextWrapped(UIStrings.MinAutocastHumanization);
+        ImGui.SetNextItemWidth(45 * ImGuiHelpers.GlobalScale);
+        if (ImGui.InputInt(UIStrings.DrawConfigs_Min_, ref Service.Configuration.MinRandomAutocastHumanization, 0))
+        {
+            if (Service.Configuration.MinRandomAutocastHumanization < 0)
+                Service.Configuration.MinRandomAutocastHumanization = 0;
+            else if (Service.Configuration.MinRandomAutocastHumanization > 9999)
+                Service.Configuration.MinRandomAutocastHumanization = 9999;
+
+            if (Service.Configuration.MinRandomAutocastHumanization > Service.Configuration.MaxRandomAutocastHumanization)
+            {
+                (Service.Configuration.MaxRandomAutocastHumanization, Service.Configuration.MinRandomAutocastHumanization) = (Service.Configuration.MinRandomAutocastHumanization, Service.Configuration.MaxRandomAutocastHumanization);
+            }
+
+
+            Service.Save();
+        }
+
+        ImGui.NewLine();
+
+        ImGui.PopID();
+
+        ImGui.PushID("MaxRandomAutocastHumanization");
+        ImGui.TextWrapped(UIStrings.MaxAutocastHumanization);
+        ImGui.SetNextItemWidth(45 * ImGuiHelpers.GlobalScale);
+        if (ImGui.InputInt(UIStrings.DrawConfigs_Max_, ref Service.Configuration.MaxRandomAutocastHumanization, 0))
+        {
+            if (Service.Configuration.MaxRandomAutocastHumanization < 0)
+                Service.Configuration.MaxRandomAutocastHumanization = 0;
+            else if (Service.Configuration.MaxRandomAutocastHumanization > 9999)
+                Service.Configuration.MaxRandomAutocastHumanization = 9999;
+
+            if (Service.Configuration.MaxRandomAutocastHumanization < Service.Configuration.MinRandomAutocastHumanization)
+            {
+                (Service.Configuration.MinRandomAutocastHumanization, Service.Configuration.MaxRandomAutocastHumanization) = (Service.Configuration.MaxRandomAutocastHumanization, Service.Configuration.MinRandomAutocastHumanization);
+            }
+
+            Service.Save();
+        }
+
+        ImGui.Separator();
+
+
         ImGui.PopID();
     }
 

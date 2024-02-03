@@ -7,9 +7,6 @@ namespace AutoHook.Configurations;
 public class AutoCastsConfig
 {
     public bool EnableAll = false;
-
-    public int MinRandomHumanization = 0;
-    public int MaxRandomHumanization = 0;
     
     public bool DontCancelMooch = true;
     

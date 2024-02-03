@@ -3,8 +3,8 @@
     <PropertyGroup>
         <Authors>Det</Authors>
         <Version>3.0.2.0</Version>
-        <Description>Auto hooks for you</Description>
-        <PackageProjectUrl>https://github.com/InitialDet/AutoHook</PackageProjectUrl>
+        <Description>Auto hooks for you, but humanized</Description>
+        <PackageProjectUrl>https://github.com/Darkovian/AutoHookHumanized</PackageProjectUrl>
         <Configurations>Release;Debug</Configurations>
         <TargetFramework>net7.0-windows</TargetFramework>
         <Platforms>x64</Platforms>
