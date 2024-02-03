@@ -2,27 +2,16 @@
 
 AutoHook is a FFXIV plugin that assists you while fishing
 
-## Help us with localization
-https://crowdin.com/project/autohook-plugin-localization
+This project is based on the great plugin created by InitialDet! Check it ou here: https://github.com/InitialDet/AutoHook
 
 ## Installation
 
-```
-https://raw.githubusercontent.com/InitialDet/MyDalamudPlugins/main/pluginmaster.json
-```
-* Copy the link above
-* Open your Plugin Installer Window and click Settings
-* Go to the Experimental Tab
-* Paste the link into the Custom Plugin Repositories, and click the + on the right to add it.
-* Save and close.
-* Search and Install AutoHook from the Plugin Installer.
-* Enjoy
-
-![image](https://github.com/InitialDet/AutoHook/assets/13919114/3811f164-eb56-4e8e-b9d2-7604518393e4)
+Not available for installation yet. Check back soon!
 
 
 # Features
 
+- **Humanization:** All automated actions now have a setting that lets you tweak how much random delay shoud be added before that event
 
 - **Conditional Hooking:** Customize hooking behavior based on factors like the current bait/mooch, player effects such as Patience I/II, Fisher's Intuition, and more.
 
