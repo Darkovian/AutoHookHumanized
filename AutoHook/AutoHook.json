@@ -1,0 +1,14 @@
+{
+  "Author": "Darkov",
+  "Name": "Auto Hook Humanized",
+  "Punchline": "Makes fishing less (or more) boring",
+  "Description": "It hooks the fish for you, can you believe it?",
+  "InternalName": "AutoHookHumanized",
+  "RepoUrl": "https://github.com/Darkovian/AutoHookHumanized",
+  "ApplicableVersion": "any",
+  "Tags": [ "Gathering", "Fishing" ],
+  "DalamudApiLevel": 9,
+  "AcceptsFeedback": false,
+  "IconUrl": "https://raw.githubusercontent.com/Darkovian/AutoHookHumanized/main/AutoHook/images/icon.png",
+  "Changelog": "Click the new Changelog button to see whats new"
+}
