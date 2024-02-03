@@ -218,8 +218,7 @@ public class HookingManager : IDisposable
             _recastTimer.Start();
 
         // only try to auto cast every 500ms + humanization randomness
-        AutoCastsConfig acCfg = this.GetAutoCastCfg();
-        int humanizedDelay = new Random().Next(acCfg.MinRandomHumanization, acCfg.MaxRandomHumanization);
+        int humanizedDelay = new Random().Next(Service.Configuration.MinRandomAutocastHumanization, Service.Configuration.MaxRandomAutocastHumanization);
         int totalDelay = 500 + humanizedDelay;
 
         if (!(_recastTimer.ElapsedMilliseconds > _lastTickMs + totalDelay))
@@ -231,6 +230,8 @@ public class HookingManager : IDisposable
             return;
 
         CheckExtraActions();
+
+        AutoCastsConfig acCfg = this.GetAutoCastCfg();
 
         var cast = GetFishCaughActions() ?? GetNextAutoCast(acCfg);
 
