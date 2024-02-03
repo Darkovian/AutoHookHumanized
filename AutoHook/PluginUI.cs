@@ -178,10 +178,12 @@ public class PluginUi : Window, IDisposable
         ImGui.PushStyleColor(ImGuiCol.ButtonActive, 0xDD000000 | 0x005E5BFF);
         ImGui.PushStyleColor(ImGuiCol.ButtonHovered, 0xAA000000 | 0x005E5BFF);
 
+        ImGui.BeginDisabled();
         if (ImGui.Button(buttonText))
         {
-            OpenBrowser(@"https://ko-fi.com/initialdet");
+            OpenBrowser(@"https://ko-fi.com/Darkovian");
         }
+        ImGui.EndDisabled();
 
         ImGui.PopStyleColor(3);
     }
@@ -196,10 +198,12 @@ public class PluginUi : Window, IDisposable
         ImGui.PushStyleColor(ImGuiCol.ButtonActive, 0xDD000000 | 0x005E5BFF);
         ImGui.PushStyleColor(ImGuiCol.ButtonHovered, 0xAA000000 | 0x005E5BFF);
 
+        ImGui.BeginDisabled();
         if (ImGui.Button(buttonText))
         {
-            OpenBrowser(@"https://www.paypal.com/donate/?business=PDZJVTF5484UA&no_recurring=0&currency_code=USD");
+            OpenBrowser(@"https://www.google.com");
         }
+        ImGui.EndDisabled();
 
         ImGui.PopStyleColor(3);
     }

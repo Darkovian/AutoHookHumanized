@@ -51,10 +51,12 @@ internal class AutoGig : Window, IDisposable
         ImGui.PushStyleColor(ImGuiCol.ButtonActive, 0xDD000000 | 0x005E5BFF);
         ImGui.PushStyleColor(ImGuiCol.ButtonHovered, 0xAA000000 | 0x005E5BFF);
 
+        ImGui.BeginDisabled();
         if (ImGui.Button(buttonText))
         {
-            Process.Start(new ProcessStartInfo { FileName = "https://ko-fi.com/initialdet", UseShellExecute = true });
+            Process.Start(new ProcessStartInfo { FileName = "https://ko-fi.com/Darkovian", UseShellExecute = true });
         }
+        ImGui.EndDisabled();
 
         ImGui.PopStyleColor(3);
     }
