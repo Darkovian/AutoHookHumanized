@@ -2,7 +2,7 @@
 
 AutoHook is a FFXIV plugin that assists you while fishing
 
-This project is based on the great plugin created by InitialDet! Check it ou here: https://github.com/InitialDet/AutoHook
+This project is based on the great plugin created by InitialDet! Check it out here: https://github.com/InitialDet/AutoHook
 
 ## Installation
 
